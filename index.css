@@ -1,0 +1,27 @@
+.box {
+    background-color: white;
+	border-left: 1px solid gray;
+	border-top: 1px solid grey;
+	height: 50px;
+	width: 50px;
+	display: inline-block;
+	position: relative;
+}
+.box2 {
+    background-color: black;
+	border-left: 1px solid grey;
+	border-top: 1px solid grey;
+	height: 50px;
+	width: 50px;
+	display: inline-block;
+	position: relative;
+}
+
+#grid {
+	height: auto;
+	width: auto;
+	border-right: 1px solid grey;
+	border-bottom: 1px solid grey;
+	display: inline-block;
+}
+

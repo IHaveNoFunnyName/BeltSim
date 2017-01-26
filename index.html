@@ -1,0 +1,53 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+<div sytle="text-align: center;">
+<div id="grid">
+</div>
+</div>
+
+<script>
+	var a = [
+		[0, 0, 0, 0, 0],
+		[1, 0, 0, 0, 0],
+		[0, 0, 0, 0, 0],
+		[0, 0, 0, 0, 0],
+		[0, 0, 0, 0, 0]
+	]
+	
+	function test() {
+		document.getElementById("grid").innerHTML = makeGrid(a);
+	}
+	
+	function flip(x){
+		a[x[0]][x[1]] = !a[x[0]][x[1]];
+		test();
+	}
+	
+	function makeGrid(gridtest){
+		var str = "";
+		for (var i = 0; i < gridtest.length; i++) {
+			str += makeRow(gridtest[i], i);
+		}
+		return str;
+	}
+	
+	function makeRow(row, y) {
+		var str = "<div class=\"row\">"
+		for (var i = 0; i < row.length; i++) {
+		if (row[i] == 0) {
+			str += "<div class=\"box\" id=\"[" + y + "," + i + "]\" onClick=\"flip(JSON.parse(this.id))\"></div>";
+		} else {
+			str += "<div class=\"box2\" id=\"[" + y + "," + i + "]\" onClick=\"flip(JSON.parse(this.id))\"></div>";
+		}
+		}
+		str += "</div>";
+		return str;
+	}
+	
+	test();
+</script>
+</body>
+</html>
